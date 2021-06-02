@@ -1,8 +1,7 @@
-require('dotenv').config({ path: './.env' })
-const express = require("express");
+require('dotenv').config({ path: './.env' }) //used to read .env files
+const express = require("express") 
 const mongoose = require('mongoose')
 const connectToMongo = require('./utils/connectToMongo')
-const User = require('./models/UserResponse')
 const userResponseRouter= require('./routes/userResponseRoutes')
 
 
@@ -15,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 //setting the routers
 app.use('/', userResponseRouter)
 
-
+//make a connection to the MongoDB Database
 connectToMongo()
 
 

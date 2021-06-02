@@ -1,19 +1,23 @@
-const validator = require('validator')
-const{reasons} = require('../controllers/userResponseController')
+const validator = require('validator')//module 
+const{reasons} = require('../controllers/userResponseController')//list of reasons from the controller
 
 
 
 const checkPhoneNumberIsValid = (phoneNumber)=>{
+    //Checks if phoneNUmber is a valid phone number
     return validator.isMobilePhone(phoneNumber)
 }
 
 
 const checkEmailAddressIsValid = (emailAddress)=>{
+    //checks if emailAddress is a valid email address
     return validator.isEmail(emailAddress)
 }
 
+
 const checkReason = (reason)=>
 {
+    //returns true if the reason is valid
     if(validator.isDecimal(reason))
     {
         const num = parseInt(reason)
@@ -27,7 +31,9 @@ const checkReason = (reason)=>
 
 
 const checkFormInput = (req,res,next)=>{
-    
+    /**
+     * Checks the input of the form to be sure its valid
+     */
     let formInput = req.body
 
 

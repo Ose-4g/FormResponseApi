@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const DB = process.env.DATABASE_LOCAL
 
 const connectToMongo = async()=>{
+    
     try{
         const conn = await mongoose.connect(DB, {
 
