@@ -1,4 +1,5 @@
 const User = require('../models/UserResponse')
+
 const reasons = ['I have a question about the service',
     'I want to speak to an employee',
     'I would like to schedule a physical appointment',
@@ -42,5 +43,6 @@ const getAllResponses = async(req,res,next) =>{
 
 module.exports = {
     handleFormRequest,
-    getAllResponses
+    getAllResponses,
+    reasons
 }
