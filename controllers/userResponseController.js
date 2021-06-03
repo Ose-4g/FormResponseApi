@@ -29,12 +29,12 @@ const getAllResponses = async(req,res,next) =>{
     
     let { page = 1, limit = 10 } = req.query;
 
-    //options to filter the 
+    //options to filter based on field
     const options = req.query
     delete options.page
     delete options.limit
 
-
+    //pagination
     limit = parseInt(limit)
     page = parseInt(page)
 
@@ -44,6 +44,7 @@ const getAllResponses = async(req,res,next) =>{
 
     try{
         const result = await User.find(options).sort({createdAt: -1})
+        .select('-__v -updatedAt -createdAt')
         .limit(limit * 1)
         .skip((page - 1) * limit)
         .exec();

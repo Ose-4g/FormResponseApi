@@ -11,22 +11,26 @@ const userResponseSchema = new mongoose.Schema(
 
         firstName: {
             type: String,
-            required: true
+            required: [true,'firstname cannot be empty'],
+            trim:true
         },
 
         lastName: {
             type: String,
-            required: true
+            required:[ true,'lastName cannot be empty'],
+            trim:true
         },
 
         emailAddress: {
             type: String,
-            required: true
+            required: [true,'email address cannot be empty'],
+            trim: true
         },
 
         phoneNumber: {
             type: String,
-            required: true
+            required: [true,'phone Number cannot be empty'],
+            trim: true
         },
 
         message: {
