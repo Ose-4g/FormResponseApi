@@ -27,12 +27,38 @@ const handleFormRequest = async(req,res,next)=>{
 
 const getAllResponses = async(req,res,next) =>{
     
+    let { page = 1, limit = 10 } = req.query;
+
     //options to filter the 
     const options = req.query
-    
+    delete options.page
+    delete options.limit
+
+
+    limit = parseInt(limit)
+    page = parseInt(page)
+
+    page = Math.max(1,page)
+    limit = Math.max(1,limit)
+
+
     try{
-        const result = await User.find(options).sort({createdAt: 1})
-        res.json(result)
+        const result = await User.find(options).sort({createdAt: -1})
+        .limit(limit * 1)
+        .skip((page - 1) * limit)
+        .exec();
+
+
+        const count = await User.countDocuments(options);
+
+        let answer = {
+            currentPage: page,
+            numberOfResponsesOnCurrentPage: result.length, 
+            totalNumberOfResponses: count,
+            totalNumberOfPages: Math.ceil(count / limit),
+            results: result
+        }
+        res.json(answer)
     }
     catch(error)
     {
