@@ -31,7 +31,7 @@ const getAllResponses = async(req,res,next) =>{
     const options = req.query
     
     try{
-        const result = await User.find(options)
+        const result = await User.find(options).sort({createdAt: 1})
         res.json(result)
     }
     catch(error)
