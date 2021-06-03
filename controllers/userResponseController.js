@@ -58,7 +58,7 @@ const getAllResponses = async(req,res,next) =>{
             totalNumberOfPages: Math.ceil(count / limit),
             results: result
         }
-        res.json(answer)
+        res.status(200).json(answer)
     }
     catch(error)
     {

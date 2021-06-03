@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 
 const DB = process.env.DATABASE_LOCAL
 
+
+//connects mongoose to the local or remote database  to enable CRUD Operations.
+
 const connectToMongo = async()=>{
     
     try{
