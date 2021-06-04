@@ -60,7 +60,7 @@ QUERY PARAMETERS
     </li>
 </ul>
 
-Example code
+Sample Request
 <pre>
     GET BASE_URL/?firstName=Osemudiamen&lastName=Itua&page=1&limit=20
 </pre>
