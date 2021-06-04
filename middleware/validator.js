@@ -43,9 +43,7 @@ const checkFormInput = (req,res,next)=>{
     let emailCheck = checkEmailAddressIsValid(formInput.emailAddress)
     let phoneNumberCheck = checkPhoneNumberIsValid(formInput.phoneNumber)
 
-    console.log("reason = "+ formInput.reason)
 
-    console.log(reasonCheck+ "  " + firstNameCheck+ "  " + lastNameCheck + "   "+ emailCheck + "   "+ phoneNumberCheck+ "    ")
     if(reasonCheck && firstNameCheck && lastNameCheck && emailCheck && phoneNumberCheck)
     {
         return next()

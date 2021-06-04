@@ -17,7 +17,6 @@ const handleFormRequest = async(req,res,next)=>{
     try {
         await user.save();
         res.send("Your resonse has been saved. Thank you for your time");
-        console.log(user)
 
       } catch (error) {
         res.status(500).send(error);
