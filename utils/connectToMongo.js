@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const DB = process.env.DATABASE_LOCAL
-
+//const DB = process.env.DATABASE_LOCAL
+const DB = process.env.DATABASE_REMOTE.replace('<PASSWORD>',process.env.REMOTE_PASSWORD)
 
 //connects mongoose to the local or remote database  to enable CRUD Operations.
 

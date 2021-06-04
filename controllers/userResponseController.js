@@ -16,7 +16,7 @@ const handleFormRequest = async(req,res,next)=>{
     //saving the data to the database
     try {
         await user.save();
-        res.send(user);
+        res.send("Your resonse has been saved. Thank you for your time");
         console.log(user)
 
       } catch (error) {
