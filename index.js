@@ -17,8 +17,12 @@ app.use('/', userResponseRouter)
 //make a connection to the MongoDB Database
 connectToMongo()
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(port, ()=>{
     console.log("server running on port 3000")
 })
 
