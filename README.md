@@ -56,7 +56,7 @@ QUERY PARAMETERS
         email: Used to filter the users based on email. IT IS CASE SENSITIVE
     </li>
     <li>
-        phoneNUmber: Used to filter the users based on phoneNumber. IT IS CASE SENSITIVE
+        phoneNumber: Used to filter the users based on phoneNumber. IT IS CASE SENSITIVE
     </li>
 </ul>
 
